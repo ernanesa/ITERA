@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nome": "admin",
+        "login": "admin",
+        "senha": "admin",
+        "role": "administrador",
+        "ativo": true
+    },
+    {
+        "id": 2,
+        "nome": "usuario",
+        "login": "usuario",
+        "senha": "usuario",
+        "role": "visitante",
+        "ativo": true
+    }
+]
