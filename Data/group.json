@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nome": "A2",
+        "category": "A",
+        "date_ingestion": "2022-08-25 08:52",
+        "companys": [
+            "1A2",
+            "2A2"
+        ]
+    },
+    {
+        "id": 2,
+        "nome": "B2",
+        "category": "B",
+        "date_ingestion": "2020-08-25 08:52",
+        "companys": [
+            "1B2",
+            "2B2"
+        ]
+    }
+]
