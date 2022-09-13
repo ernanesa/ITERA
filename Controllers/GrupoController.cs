@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using ITERA.Interfaces.Services;
 using ITERA.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITERA.Controllers
@@ -11,7 +12,6 @@ namespace ITERA.Controllers
     [Route("/grupo")]
     public class GrupoController : ControllerBase
     {
-
         private readonly IGrupoService _grupoService;
         private readonly IEmpresaService _empresaService;
 
@@ -70,6 +70,7 @@ namespace ITERA.Controllers
         }
 
         [HttpPut("{_id}")]
+        [Authorize(Roles = "administrador")]
         public IActionResult Put([FromRoute] int _id, [FromQuery] string id_empresa)
         {
             var grupo = _grupoService.ObterPorId(_id);
@@ -84,6 +85,7 @@ namespace ITERA.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "administrador")]
         public IActionResult Post(Grupo grupo)
         {
             try

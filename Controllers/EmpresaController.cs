@@ -1,6 +1,7 @@
 using System;
 using ITERA.Interfaces.Services;
 using ITERA.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITERA.Controllers
@@ -35,6 +36,7 @@ namespace ITERA.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "administrador")]
         public IActionResult Post(Empresa empresa)
         {
             try
@@ -58,6 +60,7 @@ namespace ITERA.Controllers
         }
 
         [HttpPut("custos/{_id}")]
+        [Authorize(Roles = "administrador")]
         public IActionResult Put(Empresa empresa)
         {
             // TODO: Implementar
@@ -65,6 +68,7 @@ namespace ITERA.Controllers
         }
 
         [HttpDelete("{_id}")]
+        [Authorize(Roles = "administrador")]
         public IActionResult Delete(string _id)
         {
             try
